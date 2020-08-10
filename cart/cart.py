@@ -44,9 +44,9 @@ class Cart(object):
     
     def __iter__(self):
         """Iterate on cart's items and recovery products of database"""
-        products_ids = self.cart.keys
+        product_ids = self.cart.keys()
         #recovery products and add to cart
-        products = Product.objects.filter(id__in=products_ids)
+        products = Product.objects.filter(id__in=product_ids)
         cart = self.cart.copy()
         for product in products:
             cart[str(product.id)]['product'] = product
