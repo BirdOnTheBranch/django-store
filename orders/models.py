@@ -4,15 +4,16 @@ from shop.models import Product
 
 
 class Order(models.Model):
-    first_name  =   models.CharField(max_length=50)
-    last_name   =   models.CharField(max_length=50)
-    postal_code =   models.CharField(max_length=20)
-    email       =   models.EmailField()
-    address     =   models.CharField(max_length=250)
-    city        =   models.CharField(max_length=150)
-    created     =   models.DateTimeField(auto_now_add=True)
-    updated     =   models.DateTimeField(auto_now=True)
-    paid        =   models.BooleanField(default=False)
+    first_name   =   models.CharField(max_length=50)
+    last_name    =   models.CharField(max_length=50)
+    postal_code  =   models.CharField(max_length=20)
+    email        =   models.EmailField()
+    address      =   models.CharField(max_length=250)
+    city         =   models.CharField(max_length=150)
+    created      =   models.DateTimeField(auto_now_add=True)
+    updated      =   models.DateTimeField(auto_now=True)
+    paid         =   models.BooleanField(default=False)
+    braintree_id =   models.CharField(max_length=150, blank=True)
 
     class Meta:
         ordering = ('-created',)

@@ -1,7 +1,11 @@
 Django==3.0.9
 Pillow==7.2.0
 celery==4.4.7
+braintree==4.3.0
 
-
+#Its necessary install Erlang in ubuntu to run celery 
 #Install Erlang => https://computingforgeeks.com/how-to-install-latest-erlang-on-ubuntu-linux/
 #Install rabbit => https://computingforgeeks.com/how-to-install-latest-rabbitmq-server-on-ubuntu-linux/
+
+#Create an account in Braintree that integrate payments.
+#https://www.braintreepayments.com/es/sandbox
