@@ -2,6 +2,9 @@ Django==3.0.9
 Pillow==7.2.0
 celery==4.4.7
 braintree==4.3.0
+WeasyPrint==51
+
+#Run collectstatic
 
 #Its necessary install Erlang in ubuntu to run celery 
 #Install Erlang => https://computingforgeeks.com/how-to-install-latest-erlang-on-ubuntu-linux/
