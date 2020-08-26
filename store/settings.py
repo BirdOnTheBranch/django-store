@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'coupons.apps.CouponsConfig',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -106,8 +108,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
+from django.utils.translation import gettext_lazy as _
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -133,9 +145,9 @@ CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Braintree configuration
-BRAINTREE_MERCHANT_ID = '52vrpsjjq5xpzmz8' 
-BRAINTREE_PUBLIC_KEY = 'pbnxhnns78j8f2kv'
-BRAINTREE_PRIVATE_KEY = 'c3405ad0c383dea7f35d2425e07d88ed'
+BRAINTREE_MERCHANT_ID = 'xxxx' 
+BRAINTREE_PUBLIC_KEY = 'xxxx'
+BRAINTREE_PRIVATE_KEY = 'xxxx'
 
 from braintree import Configuration, Environment 
 
