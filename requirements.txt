@@ -1,6 +1,6 @@
 Django==3.0.9
 Pillow==7.2.0
-celery==4.4.7
+celery==5.2.2
 braintree==4.3.0
 WeasyPrint==51
 django-rosetta==0.9.4
